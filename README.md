@@ -1,5 +1,5 @@
-# angular-8-registration-login-example
+# mean-stack-registration-login-example
 
-Angular 8 User Registration and Login Example with Webpack 4
+MEAN Stack User Registration and Login Example & Tutorial
 
-Full tutorial with example available at https://jasonwatmore.com/post/2019/06/10/angular-8-user-registration-and-login-example-tutorial
+To see a demo and further details go to http://jasonwatmore.com/post/2015/12/09/mean-stack-user-registration-and-login-example-tutorial
