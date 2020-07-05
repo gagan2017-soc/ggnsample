@@ -3,9 +3,22 @@ var _ = require('lodash');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var Q = require('q');
-var mongo = require('mongoskin');
-var db = mongo.db(config.connectionString, { native_parser: true });
-db.bind('users');
+//var mongo = require('mongoskin');
+//var db = mongo.db(config.connectionString, { native_parser: true });
+//db.bind('users');
+
+const db = require("../connection");
+const dbName = "gagan2020";
+const collectionName = "users";
+
+db.initialize(dbName, collectionName, function (dbCollection) { // successCallback
+   // get all items
+   dbCollection.find().toArray(function (err, result) {
+      if (err) throw err;
+      console.log(result);
+
+      // << return response to client >>
+   });
 
 var service = {};
 
@@ -154,3 +167,4 @@ function _delete(_id) {
 
     return deferred.promise;
 }
+     });
