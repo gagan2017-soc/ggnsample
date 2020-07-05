@@ -68,7 +68,7 @@ function getById(_id) {
 
 function create(userParam) {
     var deferred = Q.defer();
-
+ console.log('create');
     // validation
     db.users.findOne(
         { username: userParam.username },
@@ -79,6 +79,7 @@ function create(userParam) {
                 // username already exists
                 deferred.reject('Username "' + userParam.username + '" is already taken');
             } else {
+               console.log('create calling');
                 createUser();
             }
         });
@@ -86,7 +87,7 @@ function create(userParam) {
     function createUser() {
         // set user object to userParam without the cleartext password
         var user = _.omit(userParam, 'password');
-
+      console.log('create Entered');
         // add hashed password to user object
         user.hash = bcrypt.hashSync(userParam.password, 10);
 
